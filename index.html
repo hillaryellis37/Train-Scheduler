@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Train Scheduler</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md 10">
+                <h3 class="text-center">Trains Trains the Magical Toot!</h3>
+                <p class="text-center">The more you chuga, the more you... Choo Choo?</p>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md 10">
+                <div class="schedule-container">
+                    <h4>Current Train Schedule</h4>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p>Train Name</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>Destination</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p>Frequency (min)</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p>Next Arrival</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p>Minutes Away</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md 10">
+                <div class="form-container">
+                    <h4>Add train</h4>
+                        <div class="form-input-container"> 
+                            <form action="/action_page.php">
+                                Train Name<br>
+                                <input type="text" name="trainname" value="">
+                                <br>
+                                Destination<br>
+                                <input type="text" name="destination" value="">
+                                <br>
+                                First Train Time (HH:mm - military time)<br>
+                                <input type="text" name="traintime" value="">
+                                <br>
+                                Frequency<br>
+                                <input type="text" name="frequency" value="">
+                                <br>
+                                <br>
+                                <input type="submit" value="Submit">
+                            </form> 
+                        </div>                    
+                </div>
+            </div>
+        </div>
+
+  
+
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>
