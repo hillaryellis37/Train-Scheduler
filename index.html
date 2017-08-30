@@ -7,7 +7,9 @@
   <meta charset="UTF-8">
   <title>Train Scheduler</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+      <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<!--   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
@@ -24,28 +26,33 @@
         </div>
         <div class="row justify-content-md-center">
             <div class="col-md 10">
-                <div class="schedule-container">
-                    <h4>Current Train Schedule</h4><hr>
-                    <div class="row">
-
-                        <div class="col-md-3">
-                            <p>Train Name</p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>Destination</p>
-                        </div>
-                        <div class="col-md-2">
-                            <p>Frequency (min)</p>
-                        </div>
-                        <div class="col-md-2">
-                            <p>Next Arrival</p>
-                        </div>
-                        <div class="col-md-2">
-                            <p>Minutes Away</p>
-                        </div>
-
+                <div class="panel panel-default">
+                    <div class="panel-heading"> 
+                        <h4 class="pannel-title">Current Train Schedule</h4>
                     </div>
-                    <hr>
+                    <div class="panel-body  schedule-container">
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <p>Train Name</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>Destination</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p>Frequency (min)</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p>Next Arrival</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p>Minutes Away</p>
+                            </div>
+
+                        </div>
+                        <hr>
+                    </div>
+                    
                 </div>
             </div>
         </div>
