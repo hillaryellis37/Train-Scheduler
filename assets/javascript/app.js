@@ -12,39 +12,39 @@ var database = firebase.database();
 
 var tName;
 var tDestination;
-var tTime;
-var tFrequency;
+// var tTime;
+// var tFrequency;
 
-    // Assumptions
+//     // Assumptions
 
-    // Time is 3:30 AM
-// var firstTime = "03:30";
+//     // Time is 3:30 AM
+// // var firstTime = "03:30";
 
-    // First Time (pushed back 1 year to make sure it comes before current time)
-var firstTimeConverted = moment(tTime, "hh:mm").subtract(1, "years");
-    console.log(firstTimeConverted);
+//     // First Time (pushed back 1 year to make sure it comes before current time)
+// var firstTimeConverted = moment(tTime, "hh:mm").subtract(1, "years");
+//     // console.log(firstTimeConverted);
 
-    // Current Time
-var currentTime = moment();
-    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+//     // Current Time
+// var currentTime = moment();
+//     // console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 
-    // Difference between the times
-var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-    console.log("DIFFERENCE IN TIME: " + diffTime);
+//     // Difference between the times
+// var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+//     // console.log("DIFFERENCE IN TIME: " + diffTime);
 
-    // Time apart (remainder)
-var tRemainder = diffTime % tFrequency;
-    console.log(tRemainder);
+//     // Time apart (remainder)
+// var tRemainder = diffTime % tFrequency;
+//     // console.log(tRemainder);
 
-    // Minute Until Train
-var tMinutesTillTrain = tFrequency - tRemainder;
-    console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+//     // Minute Until Train
+// var tMinutesTillTrain = tFrequency - tRemainder;
+//     // console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
-    // Next Train
-var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+//     // Next Train
+// var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+//     // console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
-
+// var timeNextTrain = moment(nextTrain).format("hh:mm");
 
 $("#add-train").on("click", function(event) {
 
@@ -79,21 +79,49 @@ $("#add-train").on("click", function(event) {
 
 database.ref().on("child_added", function(childSnapshot) {
 
-      console.log(childSnapshot.val().tName);
-      console.log(childSnapshot.val().tDestination);
-      console.log(childSnapshot.val().tFrequency);
-      console.log(childSnapshot.val().tTime);
-      console.log(nextTrain);
-      console.log(tMinutesTillTrain);
+      // console.log(childSnapshot.val().tName);
+      // console.log(childSnapshot.val().tDestination);
+      // console.log(childSnapshot.val().tFrequency);
+      // console.log(childSnapshot.val().tTime);
+      // console.log(nextTrain);
+      // console.log(tMinutesTillTrain)
 
-      // tTime = childSnapshot.val().tTime;
-      // tFrequency = childSnapshot.val().tFrequency;
 
+
+      tTime = childSnapshot.val().tTime;
+      tFrequency = childSnapshot.val().tFrequency;
+var firstTimeConverted = moment(tTime, "hh:mm").subtract(1, "years");
+    // console.log(firstTimeConverted);
+
+    // Current Time
+var currentTime = moment();
+    // console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+
+    // Difference between the times
+var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    // console.log("DIFFERENCE IN TIME: " + diffTime);
+
+    // Time apart (remainder)
+var tRemainder = diffTime % tFrequency;
+    // console.log(tRemainder);
+
+    // Minute Until Train
+var tMinutesTillTrain = tFrequency - tRemainder;
+    // console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+
+    // Next Train
+var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+    // console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+
+var timeNextTrain = moment(nextTrain).format("hh:mm");
+
+
+      	
 
       $(".schedule-container").append("<div class='row'><div class='col-md-3' id='name-display'>" + childSnapshot.val().tName
        + "</div><div class='col-md-3' id='dest-display'>" + childSnapshot.val().tDestination
        + "</div><div class='col-md-2' id='freq-display'>" + childSnapshot.val().tFrequency
-       + "</div><div class='col-md-2' id='arrival-display'>" + moment(nextTrain).format("hh:mm")
+       + "</div><div class='col-md-2' id='arrival-display'>" + timeNextTrain
        + "</div><div class='col-md-2' id='min-display'>" + tMinutesTillTrain
        + "</div></div><hr>");
       
