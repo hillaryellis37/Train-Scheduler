@@ -1,7 +1,43 @@
 body {
-	background-image: url("../images/congruent_pentagon.png");
+/*	background-image: url("../images/congruent_pentagon.png");*/
 }
 
 hr {
 	margin: 5px 0px 5px 0px;
 }
+
+h1 {
+	font-family: 'Faster One', cursive;
+}
+
+.panel-default .panel-heading {
+    color: #f5f5f5;
+    background-color: #62adda;
+    border-color: #ddd;
+}
+
+.panel-default {
+    border-color: #ddd;
+    background-color: #f7f5f0;
+}
+
+.schedule-title {
+	font-family: 'Press Start 2P', cursive;
+	color: yellow;
+}
+
+.schedule-container {
+/*	font-family: 'Monofett', cursive;*/
+	font-family: 'Press Start 2P', cursive;
+	font-size: 11pt;
+	color: yellow;
+	background-image: url("../images/tweed.png");
+
+}
+
+font-family: 'Press Start 2P', cursive;
+font-family: 'Graduate', cursive;
+font-family: 'Nova Cut', cursive;
+
+font-family: 'Codystar', cursive;
+font-family: 'Monofett', cursive;
